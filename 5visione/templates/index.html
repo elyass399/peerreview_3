@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina di Benvenuto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-between bg-white relative py-20">
+        <!-- Welcome Text -->
+        <div class="text-center">
+            <h1 class="text-8xl italic font-bold">BENVENUTO</h1>
+            <h2 class="text-4xl mt-0">a</h2>
+            <h3 class="text-4xl font-medium mt-0">peerreview</h3>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-20 flex flex-col gap-6">
+            <a href="{{ url_for('create_room') }}">
+                <button class="btn-primary">
+                    Crea una Stanza
+                </button>
+            </a>
+            <a href="{{ url_for('join_room') }}">
+                <button class="btn-primary">
+                    Unisciti a una Stanza
+                </button>
+            </a>
+           
+        </div>
+    </div>
+</body>
+</html>

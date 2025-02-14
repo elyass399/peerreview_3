@@ -1,0 +1,21 @@
+!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unisciti a una Stanza</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-center bg-white relative py-20">
+        <form method="POST" action="{{ url_for('join_room') }}" class="flex flex-col gap-4">
+            <input type="text" name="first_name" placeholder="Nome" class="px-4 py-2 border rounded-lg">
+            <input type="text" name="last_name" placeholder="Cognome" class="px-4 py-2 border rounded-lg">
+            <input type="text" name="room_id" placeholder="ID della Stanza" class="px-4 py-2 border rounded-lg">
+            <button type="submit" class="px-8 py-4 bg-green-500 text-white rounded-2xl text-2xl shadow-lg hover:bg-green-600 transition">
+                Unisciti alla Stanza
+            </button>
+        </form>
+    </div>
+</body>
+</html>

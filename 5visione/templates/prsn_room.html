@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanza Personale</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-center bg-white relative py-20">
+        <h1 class="text-4xl font-bold mb-8">Stanza Personale</h1>
+        <div class="bg-gray-100 p-8 rounded-lg shadow-lg w-full max-w-2xl">
+            <h2 class="text-2xl font-semibold mb-4">Nome: {{ user_name }}</h2>
+            <h3 class="text-xl font-semibold mb-4">Punteggi per Caratteristica:</h3>
+            <ul class="list-disc list-inside">
+                {% for characteristic, score in scores.items() %}
+                <li>{{ characteristic }}: {{ score }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

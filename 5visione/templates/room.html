@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room {{ room_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Room: {{ room_id }}</h1>
+    <h2>Members</h2>
+    <ul>
+        {% for member in members %}
+        <li><a href="{{ url_for('user_page', room_id=room_id, user_name=member) }}">{{ member }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Classement</h2>
+    <ul>
+        {% for member, score in classement.items() %}
+        <li>{{ member }}: {{ score }}</li>
+        {% endfor %}
+    </ul>
+    <div class="mt-20 flex flex-col gap-6">
+        <a href="{{ url_for('personal_page') }}">
+            <button class="btn-primary">
+                La tua Pagina Personale
+            </button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea una Stanza</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function addCharacteristic() {
+            const container = document.getElementById('characteristics-container');
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'characteristics';
+            input.placeholder = 'Caratteristica';
+            input.className = 'px-4 py-2 border rounded-lg';
+            container.appendChild(input);
+        }
+    </script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-center bg-white relative py-20">
+        <form method="POST" action="{{ url_for('create_room') }}" class="flex flex-col gap-4">
+            <input type="text" name="first_name" placeholder="Nome" class="px-4 py-2 border rounded-lg" required>
+            <input type="text" name="last_name" placeholder="Cognome" class="px-4 py-2 border rounded-lg" required>
+            <input type="text" name="room_name" placeholder="Nome della Stanza" class="px-4 py-2 border rounded-lg" required>
+            <div id="characteristics-container" class="flex flex-col gap-2">
+                <input type="text" name="characteristics" placeholder="Caratteristica" class="px-4 py-2 border rounded-lg" required>
+                <input type="text" name="characteristics" placeholder="Caratteristica" class="px-4 py-2 border rounded-lg" required>
+                <input type="text" name="characteristics" placeholder="Caratteristica" class="px-4 py-2 border rounded-lg" required>
+                <input type="text" name="characteristics" placeholder="Caratteristica" class="px-4 py-2 border rounded-lg" required>
+            </div>
+            <button type="button" onclick="addCharacteristic()" class="btn-secondary">
+                +
+            </button>
+            <button type="submit" class="btn-primary">
+                Crea Stanza
+            </button>
+        </form>
+    </div>
+</body>
+</html>
